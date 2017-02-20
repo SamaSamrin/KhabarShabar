@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/white_back"
+    tools:context="com.example.user.khabarshabar.MainActivity">
+
+    <TextView
+        android:text="WELCOME "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcome_prompt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="36sp"
+        android:textColor="@color/myGreen"
+        android:textAlignment="center"
+        android:fontFamily="casual"
+        android:layout_marginTop="83dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold|italic"
+        android:fadingEdge="horizontal"
+        android:enabled="false" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/main_logo"
+        android:id="@+id/logoButton"
+        android:scaleType="centerCrop"
+        android:background="@android:color/transparent"
+        android:layout_marginRight="58dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="31dp"
+        android:layout_alignTop="@+id/welcome_prompt"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="gotoLogin"/>
+
+    <TextView
+        android:text="to"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/toText"
+        android:fontFamily="casual"
+        android:textColor="@color/myGreen"
+        android:layout_below="@+id/welcome_prompt"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+</RelativeLayout>
