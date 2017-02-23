@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1042641132883",
+    "firebase_url": "https://khabarshabar-73d5f.firebaseio.com",
+    "project_id": "khabarshabar-73d5f",
+    "storage_bucket": "khabarshabar-73d5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042641132883:android:33744ea6eb995ccb",
+        "android_client_info": {
+          "package_name": "com.example.user.khabarshabar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042641132883-v51cd8lu45u4cjrlsu393m80upsae23t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.khabarshabar",
+            "certificate_hash": "476B863C24FA4DC1FF558D38D0FF3EFDAD7CEB77"
+          }
+        },
+        {
+          "client_id": "1042641132883-38c0fvrkj4g7boof0vl9velf9ne74vst.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.khabarshabar",
+            "certificate_hash": "AF8310DC1C26AD75AC3EFD7DCC56A4916514780A"
+          }
+        },
+        {
+          "client_id": "1042641132883-5dhoo54ivov3csslleammvqfi7kjb7db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdTLz-NdhYCjlWk4W6SNVJH76C9KdG0HE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042641132883-5dhoo54ivov3csslleammvqfi7kjb7db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
