@@ -19,5 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="231dp"
         android:id="@+id/button2"
-        android:onClick="goToScrolling"/>
+        android:onClick="goToScrolling"
+        style="@android:style/Widget.Material.Button"
+        android:textAppearance="@style/MyButtonStyle"/>
 </RelativeLayout>

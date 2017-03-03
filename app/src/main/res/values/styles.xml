@@ -2,11 +2,15 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar"><!--android:Theme.Material.Light.DarkActionBar"-->
-        <!-- Customize your theme hBase.ere. -->
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/mainGreen</item>
+        <item name="android:textColorPrimary">@color/myWhite</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/myBlue</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

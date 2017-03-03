@@ -16,7 +16,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/dummyButton"
             android:layout_weight="1"
-            android:onClick="goToNavigationDrawer"/>
+            android:onClick="goToNavigationDrawer"
+            style="@android:style/Widget.Material.Button"
+            android:textAppearance="@style/MyButtonStyle" />
 
         <android.support.v7.widget.Toolbar
             android:layout_height="?attr/actionBarSize"

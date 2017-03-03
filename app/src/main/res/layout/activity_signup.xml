@@ -50,7 +50,10 @@
         android:layout_alignBottom="@+id/emailInputText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="Enter your email" />
+        android:hint="Enter your email"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        style="@android:style/Widget.Material.EditText"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,12 +62,16 @@
         android:ems="10"
         android:layout_marginTop="27dp"
         android:id="@+id/passwordField"
-        android:text="Password"
-        android:textColor="@color/mainGreen"
         android:layout_below="@+id/emailField"
         android:layout_alignLeft="@+id/emailField"
         android:layout_alignStart="@+id/emailField"
-        android:background="@android:color/white" />
+        android:background="@android:color/white"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:layout_alignEnd="@+id/emailField"
+        style="@android:style/Widget.Material.EditText"
+        android:hint="Enter password "
+        android:singleLine="true"
+        android:textColor="@color/mainGreen" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -88,7 +95,10 @@
         android:layout_alignEnd="@+id/loginText"
         android:layout_marginTop="33dp"
         android:id="@+id/goButton"
-        android:onClick="goOnClick"/>
+        android:onClick="goOnClick"
+        android:visibility="visible"
+        style="@android:style/Widget.Material.Button"
+        android:textAppearance="@style/MyButtonStyle"/>
 
     <TextView
         android:text="Sign Up! "

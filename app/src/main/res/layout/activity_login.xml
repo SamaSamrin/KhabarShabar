@@ -13,65 +13,17 @@
     tools:context="com.example.user.khabarshabar.login"
     android:textAlignment="center">
 
+
     <TextView
         android:text="Full Name : "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/fullNameInputPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/myWhite"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
-        android:id="@+id/fullNamePrompt"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/emailInputField"
-        android:hint="Enter your email address"
-        android:layout_alignBaseline="@+id/emailInputPrompt"
-        android:layout_alignBottom="@+id/emailInputPrompt"
-        android:layout_alignLeft="@+id/fullNameInputField"
-        android:layout_alignStart="@+id/fullNameInputField"
-        android:textColor="@android:color/white"
-        android:textAlignment="center" />
-
-    <TextView
-        android:text="Gender : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/genderPrompt"
-        android:textColor="@android:color/white"
-        android:layout_alignBaseline="@+id/radioButtonMale"
-        android:layout_alignBottom="@+id/radioButtonMale"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold" />
-
-    <RadioButton
-        android:text="Male"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButtonMale"
-        app:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/dateOfBirthInput"
-        android:layout_centerHorizontal="true"
-        android:checked="false" />
-
-    <TextView
-        android:text="Email : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:id="@+id/emailInputPrompt"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/fullNameInputField"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
         android:textStyle="normal|bold" />
 
     <EditText
@@ -79,65 +31,292 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp"
         android:id="@+id/fullNameInputField"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:singleLine="true"
+        android:background="@color/myWhite"
         android:hint="Enter your full name"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:background="@android:color/transparent"
-        android:layout_alignBottom="@+id/fullNamePrompt"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <RadioButton
-        android:text="Female"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButtonFemale"
-        app:buttonTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_below="@+id/dateOfBirthInput"
-        android:layout_toRightOf="@+id/radioButtonMale"
-        android:layout_toEndOf="@+id/radioButtonMale"
-        android:checked="false" />
+        style="@android:style/Widget.Material.EditText"
+        android:layout_alignBaseline="@+id/fullNameInputPrompt"
+        android:layout_alignBottom="@+id/fullNameInputPrompt"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/emailInputField"
+        android:textColor="@color/mainGreen" />
 
     <TextView
-        android:text="Height :"
+        android:text="Email : "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:id="@+id/heightPrompt"
-        android:layout_below="@+id/radioButtonMale"
-        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fullNameInputPrompt"
         android:layout_alignParentStart="true"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:id="@+id/emailInputPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/myWhite"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_alignTop="@+id/emailInputPrompt"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/emailInputField"
+        android:layout_alignBottom="@+id/emailInputPrompt"
+        android:background="@color/myWhite"
+        style="@android:style/Widget.Material.EditText"
+        android:singleLine="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:hint="Enter email address"
+        android:layout_alignStart="@+id/passwordField"
+        android:textColor="@color/mainGreen" />
+
+    <TextView
+        android:text="Password : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/myWhite"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/emailInputPrompt"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/passwordField"
+        android:layout_alignBottom="@+id/passwordPrompt"
+        android:layout_alignTop="@+id/passwordPrompt"
+        android:singleLine="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:background="@color/myWhite"
+        android:hint="Enter password"
+        android:layout_alignStart="@+id/dateOfBirthInput"
+        android:textColor="@color/mainGreen"
+        style="@android:style/Widget.Material.EditText" />
+
+    <TextView
+        android:text="Date of Birth : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordPrompt"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/dobPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/myWhite"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_alignTop="@+id/dobPrompt"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/dateOfBirthInput"
+        android:layout_alignBottom="@+id/dobPrompt"
+
+        android:background="@color/myWhite"
+        android:backgroundTint="@color/myWhite"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/mainGreen"
+        android:hint="dd-mm-yy"
+        style="@android:style/Widget.Material.EditText" />
+
+    <TextView
+        android:text="Gender : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/genderPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textColor="@color/myWhite"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/dobPrompt"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="200dp"
+        android:id="@+id/genderGroup"
+        android:checkedButton="@+id/maleRadioButton"
+        android:backgroundTintMode="src_over"
+        android:clickable="false"
+        android:layout_height="44dp"
+        android:layout_alignTop="@+id/genderPrompt"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:text="Male"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/maleRadioButton"
+            style="@android:style/Widget.Material.Light.CompoundButton.RadioButton"
+            android:checked="false"
+            android:focusable="false"
+            android:buttonTint="@color/myWhite"
+            android:textColorLink="@android:color/white"
+            android:textColorHint="@color/myWhite"
+            android:textColorHighlight="@color/colorAccent"
+            android:textColor="@color/myWhite"
+            android:textStyle="normal|bold" />
+
+        <RadioButton
+            android:text="Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton3"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:duplicateParentState="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2"
+            android:layout_alignBottom="@+id/genderGroup"
+            android:layout_alignTop="@+id/genderGroup"
+            android:textColor="@color/myWhite"
+            android:textStyle="normal|bold"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:buttonTint="@android:color/white" />
+
+    </RadioGroup>
+
+    <TextView
+        android:text="Height : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genderGroup"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp"
+        android:id="@+id/heightPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
         android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/weightInput"
-        android:layout_alignLeft="@+id/heightInputFeet"
-        android:layout_alignStart="@+id/heightInputFeet"
-        android:layout_alignBottom="@+id/weightInputPrompt"
         android:inputType="number"
+        android:ems="10"
+        android:layout_alignTop="@+id/heightPrompt"
+        android:layout_alignStart="@+id/genderGroup"
+        android:id="@+id/heightInputFeet"
+        android:layout_alignBottom="@+id/heightPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:background="@color/myWhite"
         android:textColor="@color/mainGreen"
-        android:background="@android:color/white" />
+        style="@android:style/Widget.Material.EditText" />
+
+    <TextView
+        android:text="ft"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/heightInputFeet"
+        android:layout_toEndOf="@+id/heightInputFeet"
+        android:id="@+id/ft"
+        android:layout_width="20dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/heightInputFeet"
-        android:background="@android:color/white"
-        android:layout_alignTop="@+id/heightPrompt"
-        android:layout_alignRight="@+id/radioButtonMale"
-        android:layout_alignEnd="@+id/radioButtonMale" />
+        android:layout_alignTop="@+id/ft"
+        android:layout_toEndOf="@+id/ft"
+        android:id="@+id/heightInputInch"
+        android:layout_alignBottom="@+id/ft"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:background="@color/myWhite"
+        android:textColor="@color/mainGreen"
+        style="@android:style/Widget.Material.EditText" />
+
+    <TextView
+        android:text="inch"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/heightInputInch"
+        android:layout_toEndOf="@+id/heightInputInch"
+        android:id="@+id/inch"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="Weight : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightPrompt"
+        android:layout_below="@+id/heightPrompt"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_alignTop="@+id/weightPrompt"
+        android:layout_alignStart="@+id/heightInputFeet"
+        android:id="@+id/weightInput"
+        android:layout_alignBottom="@+id/weightPrompt"
+        android:layout_toStartOf="@+id/inch"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:background="@color/myWhite"
+        android:textColor="@color/mainGreen"
+        style="@android:style/Widget.Material.EditText" />
+
+    <TextView
+        android:text="kg"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weightInput"
+        android:layout_toEndOf="@+id/weightInput"
+        android:id="@+id/kg"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="YOUR GOAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:id="@+id/goalPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+        android:layout_below="@+id/weightInput"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold|italic"
+        android:fontFamily="casual" />
+
+    <TextView
+        android:text="I want to lose "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goalPrompt"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/goalTextBeginning"
+        android:layout_toStartOf="@+id/goalPrompt"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:layout_alignEnd="@+id/dobPrompt" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/goalWeightInput"
+        android:layout_alignTop="@+id/goalTextBeginning"
+        android:layout_toEndOf="@+id/goalTextBeginning"
+        android:layout_alignBottom="@+id/goalTextBeginning"
+        android:background="@color/myWhite"
+        android:alpha="0.75"
+        android:textColor="@color/mainGreen"
+        style="@android:style/Widget.Material.EditText" />
 
     <Button
         android:text="Make My Account"
@@ -145,199 +324,46 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="51dp"
         android:id="@+id/makeAccountButton"
-        android:onClick="goBackToLogin"/>
+        android:onClick="goBackToLogin"
+        android:textAppearance="@style/MyButtonStyle"
+        style="@android:style/Widget.Material.Button"
+        android:textColor="@color/mainGreen" />
 
-    <TextView
-        android:text="ft"
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/heightInputFeet"
-        android:id="@+id/ftText"
-        android:layout_width="10dp"
-        android:layout_toRightOf="@+id/radioButtonMale"
-        android:layout_alignRight="@+id/makeAccountButton"
-        android:layout_alignEnd="@+id/makeAccountButton"
-        android:layout_alignTop="@+id/heightInputFeet"
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
-
-    <TextView
-        android:text="Weight : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:id="@+id/weightInputPrompt"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/heightInputFeet"
-        android:layout_alignRight="@+id/genderPrompt"
-        android:layout_alignEnd="@+id/genderPrompt" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/dateOfBirthInput"
-        android:textColor="@android:color/white"
-        android:textAlignment="center"
-        android:hint="day-month-year"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/emailInputField"
-        android:layout_alignLeft="@+id/emailInputField"
-        android:layout_alignStart="@+id/emailInputField" />
-
-    <TextView
-        android:text="Date of Birth : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dateOfBirthPrompt"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold"
-        android:layout_alignBaseline="@+id/dateOfBirthInput"
-        android:layout_alignBottom="@+id/dateOfBirthInput"
-        android:layout_alignLeft="@+id/weightInputPrompt"
-        android:layout_alignStart="@+id/weightInputPrompt" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/emailInputField"
-        android:layout_alignLeft="@+id/emailInputField"
-        android:layout_alignStart="@+id/emailInputField"
-        android:id="@+id/passwordField"
-        android:hint="Enter password"
-        android:textColor="@android:color/white"
-        android:textAlignment="center" />
-
-    <TextView
-        android:text="Password : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/passwordPompt"
-        android:layout_alignBaseline="@+id/passwordField"
-        android:layout_alignBottom="@+id/passwordField"
-        android:layout_alignRight="@+id/fullNamePrompt"
-        android:layout_alignEnd="@+id/fullNamePrompt"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="kg"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/weightInput"
-        android:id="@+id/kg"
-        android:layout_alignRight="@+id/ftText"
-        android:layout_alignEnd="@+id/ftText"
-        android:layout_toRightOf="@+id/weightInput"
-        android:layout_toEndOf="@+id/weightInput"
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_toRightOf="@+id/ftText"
-        android:layout_alignTop="@+id/ftText"
-        android:layout_alignBottom="@+id/ftText"
-        android:layout_alignRight="@+id/radioButtonFemale"
-        android:layout_alignEnd="@+id/radioButtonFemale"
-        android:textAlignment="center"
-        android:background="@android:color/white" />
-
-    <TextView
-        android:text="inch"
-        android:layout_width="20dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
-        android:id="@+id/inchText"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:layout_alignTop="@+id/editText"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="days"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/endGoalText"
-        android:textColor="@android:color/white"
-        android:layout_alignBottom="@+id/goalTime"
-        android:layout_alignRight="@+id/dateOfBirthInput"
-        android:layout_alignEnd="@+id/dateOfBirthInput"
-        android:layout_toRightOf="@+id/goalTime"
-        android:layout_toEndOf="@+id/goalTime"
-        android:layout_alignTop="@+id/goalTime"
-        android:textAlignment="center" />
-
-    <EditText
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/goalTime"
-        android:singleLine="true"
-        android:textColor="@color/mainGreen"
-        android:background="@android:color/white"
-        android:layout_toLeftOf="@+id/inchText"
-        android:layout_toStartOf="@+id/inchText"
-        android:layout_alignTop="@+id/centerGoalText"
-        android:layout_alignBottom="@+id/goalWeightInput" />
-
-    <EditText
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/goalWeightInput"
-        android:layout_width="35dp"
-        android:background="@android:color/white"
-        android:layout_toLeftOf="@+id/centerGoalText"
-        android:layout_toStartOf="@+id/centerGoalText"
-        android:layout_height="20dp"
-        android:layout_alignBottom="@+id/goalView" />
-
-    <TextView
-        android:text="I want to lose "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/beginningGoalText"
-        android:textColor="@android:color/white"
+        android:id="@+id/goalTimeSpinner"
         android:layout_alignBottom="@+id/goalWeightInput"
-        android:layout_toLeftOf="@+id/goalWeightInput"
-        android:layout_toStartOf="@+id/goalWeightInput"
-        android:layout_alignTop="@+id/goalWeightInput" />
-
-    <TextView
-        android:text="GOAL : "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/goalView"
-        android:textColor="@android:color/white"
-        android:textStyle="normal|bold"
-        android:textSize="18sp"
-        android:layout_below="@+id/weightInputPrompt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp" />
+        android:layout_toEndOf="@+id/goalPrompt"
+        android:layout_marginStart="16dp"
+        android:layout_alignTop="@+id/goalTime"
+        style="@android:style/Widget.Material.Spinner" />
 
     <TextView
         android:text="kg in "
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:id="@+id/centerGoalText"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:layout_alignBaseline="@+id/beginningGoalText"
-        android:layout_alignBottom="@+id/beginningGoalText"
-        android:layout_toLeftOf="@+id/goalTime"
-        android:layout_toStartOf="@+id/goalTime" />
+        android:id="@+id/goalTextMiddle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textAlignment="center"
+        android:layout_alignTop="@+id/goalWeightInput"
+        android:layout_alignStart="@+id/weightInput" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/goalTime"
+        android:textAppearance="@android:style/TextAppearance.Material.Body2"
+        android:background="@color/myWhite"
+        android:alpha="0.75"
+        android:textColor="@color/mainGreen"
+        android:layout_alignBaseline="@+id/goalTextMiddle"
+        android:layout_alignBottom="@+id/goalTextMiddle"
+        android:layout_toEndOf="@+id/goalTextMiddle"
+        style="@android:style/Widget.Material.EditText" />
 
 </RelativeLayout>

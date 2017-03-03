@@ -3,9 +3,13 @@ package com.example.user.khabarshabar;
 
 import android.app.Activity;
 import android.app.ActionBar;//support.v7.
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 //import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +17,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -60,6 +66,9 @@ public class NavigationDrawerFragment extends Fragment{
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    public String TAG = "**ND FRAGMENT**";
+    private String[] optionsList = { "My Account", "Food History", "Exercises", "Account Settings", "Log Out", "Help"};
+
     public NavigationDrawerFragment() {
     }
 
@@ -97,22 +106,38 @@ public class NavigationDrawerFragment extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+               /* Intent i = new Intent(NavigationDrawerFragment.this, user_profile_scrolling.class);
+                if(position == 0)
+                    i = new Intent(NavigationDrawerFragment.this, user_profile_scrolling.class);
+                if(i != null)
+                    startActivity(i);*/
             }
         });
         ActionBar ab  = getActivity().getActionBar();
-        if(ab != null) {
-            mDrawerListView.setAdapter(new ArrayAdapter<String>(
 
+        if(ab != null) {
+            Log.e(TAG, "ActionBar is not null");
+            if(mDrawerListView != null)
+                Log.e(TAG, "mDrawerListView is not null");
+            mDrawerListView.setAdapter(new ArrayAdapter<String>(
                             ab.getThemedContext(),
                             android.R.layout.simple_list_item_activated_1,
                             android.R.id.text1,
-                            new String[]{
-                                    getString(R.string.title_section1),
-                                    getString(R.string.title_section2),
-                                    getString(R.string.title_section3),
-                            }
-                    )
+                            optionsList
+            )  //how to change the text color of selected list item?
+                 /*{   @NonNull
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                           View view =  super.getView(position, convertView, parent);
+                            TextView tv = (TextView) view.findViewById(R.id.text1);
+                            tv.setTextColor(Color.BLACK);
+                            tv.setBackgroundColor(Color.rgb(100, 221, 23));
+                           return view;
+                    }
+                }*/
             );
+        } else  {
+            Log.e(TAG, "ActionBar is null");
         }
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
@@ -137,8 +162,15 @@ public class NavigationDrawerFragment extends Fragment{
         // set up the drawer's list view with items and click listener
 
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
+        if(actionBar != null) {
+            /*ERROR*/
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        /*java.lang.NullPointerException: Attempt to invoke virtual method
+        'void android.app.ActionBar.setDisplayHomeAsUpEnabled(boolean)'
+        on a null object reference*/
+            actionBar.setHomeButtonEnabled(true);
+
+        }
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
@@ -196,17 +228,41 @@ public class NavigationDrawerFragment extends Fragment{
         mDrawerLayout.addDrawerListener(mDrawerToggle);
     }
 
+    // Swaps fragments in the main content view
     private void selectItem(int position) {
+
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }
+
+        // Create a new fragment and specify the planet to show based on position
+        user_account fragment = new user_account();
+        Bundle args = new Bundle();
+        //args.putInt(user_account.ARG_PARAM1, position);
+        fragment.setArguments(args);
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+
+        // Highlight the selected item, update the title, and close the drawer
+        mDrawerListView.setItemChecked(position, true);
+        setTitle(optionsList[position]);
+        mDrawerLayout.closeDrawer(mDrawerListView);
+
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
         }
+    }
+
+    private void setTitle(CharSequence title) {
+        getActionBar().setTitle(title);
     }
 
     @Override
@@ -270,7 +326,7 @@ public class NavigationDrawerFragment extends Fragment{
     private void showGlobalContextActionBar() {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setTitle(R.string.app_name);
     }
 

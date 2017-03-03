@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,9 +28,10 @@ public class navigation_drawer extends Activity
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
-    private String[] mainOptions = {"Food History", "Exercises", "Account Settings", "Log Out", "Help"};
-    private ListView drawerOptionsList;
+    //private String[] mainOptions = {"Food History", "Exercises", "Account Settings", "Log Out", "Help"};
+    //private ListView drawerOptionsList;
 
+    private String TAG = "**ND**";
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -46,11 +48,16 @@ public class navigation_drawer extends Activity
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
-        drawerOptionsList = (ListView) findViewById(R.id.navigation_listView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mainOptions);
-        drawerOptionsList.setAdapter(adapter);
+        R.id.navigation_drawer,
+        (DrawerLayout) findViewById(R.id.drawer_layout));
+        /*drawerOptionsList = (ListView) findViewById(R.id.navigation_listView);
+        if(drawerOptionsList == null)
+            Log.e(TAG, "drawerOptionsList is null");
+        else {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mainOptions);
+            drawerOptionsList.setAdapter(adapter);
+            /*java.lang.NullPointerException: : Attempt to invoke virtual method 'void android.widget.ListView.setAdapter(android.widget.ListAdapter)'
+        on a null object reference at com.example.user.khabarshabar.navigation_drawer.onCreate(navigation_drawer.java:56)}*/
     }
 
     @Override
@@ -58,11 +65,11 @@ public class navigation_drawer extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))//container-e PlaceholderFragment boshano hocche
                 .commit();
     }
 
-    public void onSectionAttached(int number) {
+   /* public void onSectionAttached(int number) {
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
@@ -74,13 +81,15 @@ public class navigation_drawer extends Activity
                 mTitle = getString(R.string.title_section3);
                 break;
         }
-    }
+    }*/
 
     public void restoreActionBar() {
         ActionBar actionBar = getActionBar();
         //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD); - DEPRECATED
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        if(actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.setTitle(mTitle);
+        }
     }
 
     /**

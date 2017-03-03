@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
         EditText passwordField = (EditText) findViewById(R.id.passwordField);
         EditText dateOfBirthField = (EditText) findViewById(R.id.dateOfBirthInput);
         EditText heightInFeetField = (EditText) findViewById(R.id.heightInputFeet);
-       // EditText heightInInchField = (EditText) findViewById(R.id.)
+        EditText heightInInchField = (EditText) findViewById(R.id.heightInputInch);
         EditText weightField = (EditText) findViewById(R.id.weightInput);
         EditText goalWeightInput = (EditText) findViewById(R.id.goalWeightInput);
         EditText goalTimeInput = (EditText) findViewById(R.id.goalTime);
