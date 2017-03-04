@@ -235,23 +235,25 @@ public class NavigationDrawerFragment extends Fragment{
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }
-
+        //****************//
         // Create a new fragment and specify the planet to show based on position
-        user_account fragment = new user_account();
-        Bundle args = new Bundle();
-        //args.putInt(user_account.ARG_PARAM1, position);
-        fragment.setArguments(args);
+        if(position==0) {
+            user_account fragment = new user_account();
+            Bundle args = new Bundle();
+            //args.putInt(user_account.ARG_PARAM1, position);
+            fragment.setArguments(args);
 
-        // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+            // Insert the fragment by replacing any existing fragment
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
 
-        // Highlight the selected item, update the title, and close the drawer
-        mDrawerListView.setItemChecked(position, true);
-        setTitle(optionsList[position]);
-        mDrawerLayout.closeDrawer(mDrawerListView);
+            // Highlight the selected item, update the title, and close the drawer
+            mDrawerListView.setItemChecked(position, true);
+            setTitle(optionsList[position]);
+        }
+        mDrawerLayout.closeDrawer(mDrawerListView);//when to close the drawer?
 
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);

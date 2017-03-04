@@ -42,8 +42,8 @@ public class navigation_drawer extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragment = new NavigationDrawerFragment();
+        //getFragmentManager().findFragmentById(R.id.user_account)
         mTitle = getTitle();
 
         // Set up the drawer.
